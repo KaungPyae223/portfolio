@@ -1,0 +1,72 @@
+import React from "react";
+import GitHub from "../../public/GitHub.png";
+import Facebook from "../../public/Facebook.png";
+import Linkedin from "../../public/Linkedin.png";
+
+const Contact = () => {
+  return (
+    <div className="grid grid-cols-2 m-20">
+      <div>
+        <p className="text-5xl leading-[5rem]">
+          Get in touch <span className="block"></span>
+          with me{" "}
+          <span className="p-3 px-6 font-medium bg-yellow-300">Anytime</span>
+        </p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="size-20 mt-5"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+          />
+        </svg>
+      </div>
+      <div>
+        <p className="text-3xl font-medium mb-5">Contact Me</p>
+        <p className="mb-4 text-xl">Kaung Pyae Aung</p>
+        <table>
+          <tbody>
+            <tr>
+              <td className="pe-10 font-semibold">Email:</td>
+              <td>kaungpyaeaung8123@gmail.com</td>
+            </tr>
+            <tr>
+              <td className="pe-10 font-semibold">Phone:</td>
+              <td>09983167263, 095109983</td>
+            </tr>
+            <tr>
+              <td className="pe-10 font-semibold">Address:</td>
+              <td>No 28 NateBan Street,Kyee Myint Daing, Yangon</td>
+            </tr>
+            <tr>
+              <td className="flex font-semibold items-start pe-10">
+                <p>Availability:</p>
+              </td>
+              <td>Open for new projects and collaborations.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="mt-6 font-semibold">Follow on Social Media</p>
+        <div className="flex flex-row my-3 gap-6">
+          <a href="https://github.com/KaungPyae223">
+            <img src={GitHub} className="size-8" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100013951484585">
+            <img src={Facebook} className="size-8" />
+          </a>
+          <a href="https://www.linkedin.com/in/kaung-pyae-908324250/">
+            <img src={Linkedin} className="size-8" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
