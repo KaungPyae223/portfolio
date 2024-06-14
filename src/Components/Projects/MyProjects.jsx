@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import ProjectCard from "../Genearl/ProjectCard";
 import AlexandarArt from "../../Photos/AlexandarArt.png";
 import GG from "../../Photos/G&G.png";
@@ -6,7 +6,7 @@ import Valley from "../../Photos/Valley.png";
 import AlexaDashboard from "../../Photos/AlexaDashboard.png";
 import MyMovie from "../../Photos/MyMovie.png";
 import AlexaFunicture from "../../Photos/AlexaFunicture.png";
-import { useNavigate } from "react-router-dom";
+import Estate from "../../Photos/Estate.png";
 
 const body = [
   "This is my first time creating a parallax website and my first use of GSAP. Utilizing GSAP's ScrollTrigger and timeline functions, I developed this website. To achieve this, I first studied GSAP through YouTube tutorials, with many components of the website being inspired by those tutorials.",
@@ -17,13 +17,12 @@ const body = [
   "At first I want to request that this website cannot host because I use JSON server to run this website but the video link is added. In this website use Rtk to state management and Axios to fetching the data. This website contains the some POS features like add to craft and others.",
 ];
 
-const MyProject = () => {
-  const navigate = useNavigate();
-  return (
-    <div className="m-20">
-      <p className="text-2xl font-semibold text-center">My Best Projects</p>
+const MyProjects = () => {
+    return (
+        <div className="m-20">
+      <p className="text-3xl ">My {" "} <span className="p-3 px-4 font-medium bg-yellow-300">Frontend</span>{" "} Projects</p>
       <div className="mt-10 gap-6 grid grid-cols-3">
-        <ProjectCard
+      <ProjectCard
           photo={AlexandarArt}
           title={"Alexandar Art website"}
           type={"parallax"}
@@ -78,12 +77,19 @@ const MyProject = () => {
           demon={"https://www.youtube.com/watch?v=pQej76x3Ync&t=10s"}
           sourceCode={"https://github.com/KaungPyae223/funicture"}
         />
+        <ProjectCard
+          photo={Estate}
+          title={"Real Estate"}
+          type={"Estate Website"}
+          language={"React, tailwind"}
+          body={body[5]}
+          demon={"https://warm-bonbon-33d9b8.netlify.app/"}
+          sourceCode={"https://github.com/KaungPyae223/estate"}
+        />
       </div>
-      <div onClick={() => navigate("/projects")} className="mt-10 px-6 py-3 rounded-full bg-yellow-300 w-fit mx-auto cursor-pointer  hover:bg-yellow-800 duration-300 hover:text-white">
-        View All Products
-      </div>
+      
     </div>
-  );
+    );
 };
 
-export default MyProject;
+export default MyProjects;

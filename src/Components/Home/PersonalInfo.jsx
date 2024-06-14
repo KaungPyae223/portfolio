@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const PersonalInfo = () => {
+  const navigate = useNavigate();
   return (
     <div className="mx-20 grid grid-cols-2 my-10">
       <div className="flex justify-center">
@@ -48,7 +50,7 @@ const PersonalInfo = () => {
             </tr>
           </tbody>
         </table>
-        <div className="cursor-pointer px-4 py-2 mt-10 hover:text-white hover:bg-yellow-800 duration-300 rounded-full bg-yellow-300 w-fit">View Details</div>
+        <div onClick={() => navigate("/about")} className="cursor-pointer px-4 py-2 mt-10 hover:text-white hover:bg-yellow-800 duration-300 rounded-full bg-yellow-300 w-fit">View Details</div>
       </div>
     </div>
   );

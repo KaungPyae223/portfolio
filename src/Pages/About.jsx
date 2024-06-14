@@ -1,9 +1,16 @@
 import React from 'react';
+import AboutIntro from '../Components/About/AboutIntro';
+import Education from '../Components/About/Education';
+import Skills from '../Components/About/Skills';
+import Future from '../Components/About/Future';
 
 const About = () => {
     return (
         <div>
-            <p>Hello</p>
+            <AboutIntro/>
+            <Education/>
+            <Skills/>
+            <Future/>
         </div>
     );
 };
