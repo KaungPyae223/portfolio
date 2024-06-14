@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutIntro = () => {
+  useEffect(() => {
+    const aboutIntroTimeLine = gsap.timeline();
+
+    aboutIntroTimeLine.from(".left", {
+      delay: 0.5,
+      x: -100,
+      opacity: 0,
+      duration: 1.2
+    }, 0) .from(".right", {
+      x: 100,
+      opacity: 0,
+      duration: 1.2,
+      delay: 1
+    }, 0); 
+  }, []);
   return (
-    <div className="m-20 grid grid-cols-2 gap-10">
-      <div>
+    <div className="m-20  grid grid-cols-2 gap-10 overflow-hidden">
+      <div className="left">
         <p className="text-5xl mb-10">
           <span className="p-3 px-6 font-medium bg-yellow-300">
             Introduction
@@ -30,7 +48,7 @@ const AboutIntro = () => {
           tackling new challenges, continually striving to create and innovate.
         </p>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center right">
         <img
           className="w-1/2 h-fit"
           src="https://images.unsplash.com/photo-1517865288-978fcb780652?q=80&w=1586&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

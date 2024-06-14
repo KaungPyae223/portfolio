@@ -1,18 +1,44 @@
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const PersonalInfo = () => {
+  useEffect(() => {
+    const homePersonalTimeLine = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".profileContainer",
+        start: "center center",
+        
+      }
+    });
+
+    homePersonalTimeLine.from(".left", {
+      x: -100,
+      opacity: 0,
+      duration: 1.2
+    }, 0) .from(".right", {
+      x: 100,
+      opacity: 0,
+      duration: 1.2,
+      delay: 0.5
+    }, 0); 
+  }, []);
   const navigate = useNavigate();
   return (
-    <div className="mx-20 grid grid-cols-2 my-10">
-      <div className="flex justify-center">
-        <img className="w-1/2" src="https://images.unsplash.com/photo-1517865288-978fcb780652?q=80&w=1586&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+    <div className="mx-20 grid grid-cols-2 overflow-hidden my-10 profileContainer">
+      <div className="flex justify-center left">
+        <img
+          className="w-1/2"
+          src="https://images.unsplash.com/photo-1517865288-978fcb780652?q=80&w=1586&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
       </div>
-      <div>
+      <div className="right">
         <p className="text-3xl mb-5 font-semibold">Short Bio</p>
         <table>
           <tbody>
-          <tr>
+            <tr>
               <td className="pe-10 font-semibold">Name:</td>
               <td>Kaung Pyae Aung</td>
             </tr>
@@ -50,7 +76,12 @@ const PersonalInfo = () => {
             </tr>
           </tbody>
         </table>
-        <div onClick={() => navigate("/about")} className="cursor-pointer px-4 py-2 mt-10 hover:text-white hover:bg-yellow-800 duration-300 rounded-full bg-yellow-300 w-fit">View Details</div>
+        <div
+          onClick={() => navigate("/about")}
+          className="cursor-pointer px-4 py-2 mt-10 hover:text-white hover:bg-yellow-800 duration-300 rounded-full bg-yellow-300 w-fit"
+        >
+          View Details
+        </div>
       </div>
     </div>
   );

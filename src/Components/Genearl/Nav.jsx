@@ -1,7 +1,13 @@
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
+  useEffect(() => {
+
+    gsap.from(".navShadow",{opacity:0,y:-100,duration:0.8})
+  },[])
+
   return (
     <div className="py-5 flex justify-center w-full ">
       <div className="bg-white navShadow p-3 rounded-full flex flex-row justify-center items-center gap-10">

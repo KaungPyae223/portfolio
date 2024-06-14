@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GitHub from "../../public/GitHub.png";
 import Facebook from "../../public/Facebook.png";
 import Linkedin from "../../public/Linkedin.png";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+  useEffect(() => {
+    const homeContact = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".contactContainer",
+        start: "center 75%",
+      },
+    });
+
+    homeContact
+      .from(
+        ".contactLeft",
+        {
+          x: -100,
+          opacity: 0,
+          duration: 1.2,
+        },
+        0
+      )
+      .from(
+        ".contactUp",
+        {
+          y: 50,
+          opacity: 0,
+          duration: 1.2,
+          delay: 0.5,
+          stagger:0.5
+        },
+        0
+      );
+  }, []);
+
   return (
-    <div className="grid grid-cols-2 m-20">
-      <div>
+    <div className="contactContainer grid grid-cols-2 m-20">
+      <div className="contactLeft">
         <p className="text-5xl leading-[5rem]">
           Get in touch <span className="block"></span>
           with me{" "}
@@ -28,9 +62,9 @@ const Contact = () => {
         </svg>
       </div>
       <div>
-        <p className="text-3xl font-medium mb-5">Contact Me</p>
-        <p className="mb-4 text-xl">Kaung Pyae Aung</p>
-        <table>
+        <p className="text-3xl font-medium mb-5 contactUp">Contact Me</p>
+        <p className="mb-4 text-xl contactUp">Kaung Pyae Aung</p>
+        <table className="contactUp">
           <tbody>
             <tr>
               <td className="pe-10 font-semibold">Email:</td>
@@ -52,8 +86,8 @@ const Contact = () => {
             </tr>
           </tbody>
         </table>
-        <p className="mt-6 font-semibold">Follow on Social Media</p>
-        <div className="flex flex-row my-3 gap-6">
+        <p className="mt-6 font-semibold contactUp">Follow on Social Media</p>
+        <div className="flex flex-row my-3 gap-6 contactUp">
           <a href="https://github.com/KaungPyae223">
             <img src={GitHub} className="size-8" />
           </a>

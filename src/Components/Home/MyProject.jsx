@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProjectCard from "../Genearl/ProjectCard";
 import AlexandarArt from "../../Photos/AlexandarArt.png";
 import GG from "../../Photos/G&G.png";
@@ -7,7 +7,9 @@ import AlexaDashboard from "../../Photos/AlexaDashboard.png";
 import MyMovie from "../../Photos/MyMovie.png";
 import AlexaFunicture from "../../Photos/AlexaFunicture.png";
 import { useNavigate } from "react-router-dom";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 const body = [
   "This is my first time creating a parallax website and my first use of GSAP. Utilizing GSAP's ScrollTrigger and timeline functions, I developed this website. To achieve this, I first studied GSAP through YouTube tutorials, with many components of the website being inspired by those tutorials.",
   "This is my second React project. This website is created in early of 2023. I make this website for practising the manual api fetching, react content and reducer and to make point of sale project react. So in this website I don't use the redux tool kit and make manually state management.",
@@ -19,9 +21,42 @@ const body = [
 
 const MyProject = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    gsap.from(".homeProjectTitle", {
+      scrollTrigger: {
+        trigger: ".homeProjectTitle",
+        start: "center center",
+      },
+      opacity: 0,
+      duration: 0.6,
+    });
+
+    gsap.from(".project", {
+      scrollTrigger: {
+        trigger: ".project",
+        start: "25% 75%",
+      },
+      opacity: 0,
+      y: 150,
+      duration: 1,
+      stagger: 0.6,
+    });
+    gsap.from(".homeProjectViewMore", {
+      scrollTrigger: {
+        trigger: ".homeProjectViewMore",
+        start: "center 75%",
+      },
+      opacity: 0,
+      duration: 1,
+    });
+  }, []);
+
   return (
     <div className="m-20">
-      <p className="text-2xl font-semibold text-center">My Best Projects</p>
+      <p className="text-2xl font-semibold text-center homeProjectTitle">
+        My Best Projects
+      </p>
       <div className="mt-10 gap-6 grid grid-cols-3">
         <ProjectCard
           photo={AlexandarArt}
@@ -79,7 +114,10 @@ const MyProject = () => {
           sourceCode={"https://github.com/KaungPyae223/funicture"}
         />
       </div>
-      <div onClick={() => navigate("/projects")} className="mt-10 px-6 py-3 rounded-full bg-yellow-300 w-fit mx-auto cursor-pointer  hover:bg-yellow-800 duration-300 hover:text-white">
+      <div
+        onClick={() => navigate("/projects")}
+        className="homeProjectViewMore mt-10 px-6 py-3 rounded-full bg-yellow-300 w-fit mx-auto cursor-pointer  hover:bg-yellow-800 duration-300 hover:text-white"
+      >
         View All Products
       </div>
     </div>

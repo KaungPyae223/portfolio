@@ -13,8 +13,7 @@ const EducatonTimeLine = () => {
   return (
     <div className=" mt-16">
       <Timeline>
-        
-        <TimelineItem>
+        <TimelineItem className="educationUp">
           <TimelineConnector />
           <TimelineHeader className="h-3">
             <TimelineIcon />
@@ -34,7 +33,7 @@ const EducatonTimeLine = () => {
             </Typography>
           </TimelineBody>
         </TimelineItem>
-        <TimelineItem>
+        <TimelineItem className="educationUp">
           <TimelineConnector />
           <TimelineHeader className="h-3">
             <TimelineIcon />
@@ -56,7 +55,7 @@ const EducatonTimeLine = () => {
             </Typography>
           </TimelineBody>
         </TimelineItem>
-        <TimelineItem>
+        <TimelineItem className="educationUp">
           <TimelineConnector />
           <TimelineHeader className="h-3">
             <TimelineIcon />
@@ -76,7 +75,7 @@ const EducatonTimeLine = () => {
             </Typography>
           </TimelineBody>
         </TimelineItem>
-        <TimelineItem>
+        <TimelineItem className="educationUp">
           <TimelineHeader className="h-3">
             <TimelineIcon />
             <Typography variant="h6" color="blue-gray" className="leading-none">

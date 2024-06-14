@@ -1,8 +1,19 @@
-import React from "react";
 
-const ProjectCard = ({ photo, title, type,sourceCode,demon, language, body }) => {
+import React, { useEffect } from "react";
+
+const ProjectCard = ({
+  photo,
+  title,
+  type,
+  sourceCode,
+  demon,
+  language,
+  body,
+}) => {
+  
+
   return (
-    <div className="relative flex justify-between flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-3xl">
+    <div className="relative project flex justify-between flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-3xl">
       <div>
         <div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
           <img

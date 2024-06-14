@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import ProjectCard from "../Genearl/ProjectCard";
 import AlexandarArt from "../../Photos/AlexandarArt.png";
 import GG from "../../Photos/G&G.png";
@@ -7,6 +7,9 @@ import AlexaDashboard from "../../Photos/AlexaDashboard.png";
 import MyMovie from "../../Photos/MyMovie.png";
 import AlexaFunicture from "../../Photos/AlexaFunicture.png";
 import Estate from "../../Photos/Estate.png";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 const body = [
   "This is my first time creating a parallax website and my first use of GSAP. Utilizing GSAP's ScrollTrigger and timeline functions, I developed this website. To achieve this, I first studied GSAP through YouTube tutorials, with many components of the website being inspired by those tutorials.",
@@ -15,14 +18,41 @@ const body = [
   "This is my first dashboard website by using react. The design of the dashboard is inspired from the dribble. The dashboard charts are made with chart js. The design are made with tailwind and daisy ui.",
   "My Movie website is a type of steaming website by using MovieDB api. This website use rdk query to api fetching and state management. The design is also inspired from dribble. In this website, the user can search the movie, sort with the type, popularity and can see the movie details.",
   "At first I want to request that this website cannot host because I use JSON server to run this website but the video link is added. In this website use Rtk to state management and Axios to fetching the data. This website contains the some POS features like add to craft and others.",
+  "This is my first react project that I made. This project is only for appearing the UI and not include the routing, and any other react feature. Although in this website use the swiper js and any other react related libraries.",
 ];
 
 const MyProjects = () => {
-    return (
-        <div className="m-20">
-      <p className="text-3xl ">My {" "} <span className="p-3 px-4 font-medium bg-yellow-300">Frontend</span>{" "} Projects</p>
-      <div className="mt-10 gap-6 grid grid-cols-3">
-      <ProjectCard
+  useEffect(() => {
+    gsap.from(".frontendTitle", {
+      scrollTrigger: {
+        trigger: ".frontendTitle",
+        start: "center center",
+      },
+      opacity: 0,
+      duration: 0.6,
+    });
+
+    gsap.from(".frontendContainer > .project", {
+      scrollTrigger: {
+        trigger: ".frontendContainer",
+        start: "top 35%",
+        
+      },
+      opacity: 0,
+      y: 150,
+      duration: 1,
+      stagger: 0.6,
+    });
+    
+  }, []);
+  return (
+    <div className="m-20">
+      <p className="text-3xl frontendTitle">
+        My <span className="p-3 px-4 font-medium bg-yellow-300">Frontend</span>{" "}
+        Projects
+      </p>
+      <div className="mt-10 gap-6 grid grid-cols-3 frontendContainer">
+        <ProjectCard
           photo={AlexandarArt}
           title={"Alexandar Art website"}
           type={"parallax"}
@@ -87,9 +117,8 @@ const MyProjects = () => {
           sourceCode={"https://github.com/KaungPyae223/estate"}
         />
       </div>
-      
     </div>
-    );
+  );
 };
 
 export default MyProjects;

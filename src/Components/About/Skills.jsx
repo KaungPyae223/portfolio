@@ -1,16 +1,50 @@
 import { Typography } from "@material-tailwind/react";
-import React from "react";
+import React, { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 const skills = () => {
+  useEffect(() => {
+    const skillTimeLine = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".skillsContainer",
+        start: "center 65%",
+      },
+    });
+
+    skillTimeLine
+      .from(
+        ".skillLeft",
+        {
+          x: -100,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.3,
+        },
+        0
+      )
+      .from(
+        ".skillRight",
+        {
+          x: 100,
+          opacity: 0,
+          duration: 1.2,
+          delay: 0.3,
+        },
+        0
+      );
+  }, []);
+
   return (
-    <div className="m-20 grid grid-cols-2 gap-10 pt-3">
+    <div className="m-20 grid grid-cols-2 gap-10 pt-3 skillsContainer overflow-hidden">
       <div>
-        <p className="text-5xl mb-10">
+        <p className="text-5xl mb-10 skillLeft">
           My <span className="p-3 px-6 font-medium bg-yellow-300">Skills</span>{" "}
           Description
         </p>
         <div className="mt-16 pe-5">
-          <div className="border-b border-b-gray-300">
+          <div className="border-b border-b-gray-300 skillLeft">
             <Typography variant="h6" color="blue-gray" className="leading-none">
               HTML
             </Typography>
@@ -24,7 +58,7 @@ const skills = () => {
               validation.
             </Typography>
           </div>
-          <div className="mt-5 border-b border-b-gray-300">
+          <div className="mt-5 border-b border-b-gray-300 skillLeft">
             <Typography variant="h6" color="blue-gray" className="leading-none">
               CSS
             </Typography>
@@ -37,7 +71,7 @@ const skills = () => {
               knowledge of most use CSS properties.
             </Typography>
           </div>
-          <div className="mt-5 border-b border-b-gray-300">
+          <div className="mt-5 border-b border-b-gray-300 skillLeft">
             <Typography variant="h6" color="blue-gray" className="leading-none">
               Java Script
             </Typography>
@@ -50,7 +84,7 @@ const skills = () => {
               use the java script well.
             </Typography>
           </div>
-          <div className="mt-5 border-b border-b-gray-300">
+          <div className="mt-5 border-b border-b-gray-300 skillLeft">
             <Typography variant="h6" color="blue-gray" className="leading-none">
               Tailwind
             </Typography>
@@ -64,7 +98,7 @@ const skills = () => {
               daisy ui.
             </Typography>
           </div>
-          <div className="mt-5 border-b border-b-gray-300">
+          <div className="mt-5 border-b border-b-gray-300 skillLeft">
             <Typography variant="h6" color="blue-gray" className="leading-none">
               React
             </Typography>
@@ -81,7 +115,7 @@ const skills = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center skillRight">
         <img
           className="w-2/3 h-fit"
           src="https://images.unsplash.com/photo-1579403124614-197f69d8187b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

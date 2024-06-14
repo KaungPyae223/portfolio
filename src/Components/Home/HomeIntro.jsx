@@ -1,20 +1,35 @@
-import React from "react";
+
+import gsap from "gsap";
+import React, { useEffect } from "react";
 
 const HomeIntro = () => {
+  useEffect(() => {
+    const HomeIntroTimeline = gsap.timeline();
+
+    HomeIntroTimeline.from(".name",{
+      delay:0.5,
+      duration:0.8,
+      stagger: 0.4,
+      y:50,
+      opacity:0
+    })
+
+  },[])
+
   return (
     <div className="w-full flex flex-col items-center py-16">
-      <p className="text-5xl p-5 rounded-xl bg-yellow-300 font-semibold">
+      <p className="name text-5xl p-5 rounded-xl bg-yellow-300 font-semibold">
         Hey, I'm Kaung Pyae Aung
       </p>
-      <p className="text-5xl font-semibold my-12">a junior web developer</p>
-      <p className="w-1/2 mt-3 text-lg">
+      <p className="name text-5xl font-semibold my-12">a junior web developer</p>
+      <p className="name w-1/2 mt-3 text-lg">
         I recently finished the NCC level 5 diploma in computing and have
         knowledge with HTML, CSS, JavaScript, and React. I have completed
         several projects, including building personal websites, shopping
         websites and others.
       </p>
-      <div className="p-5 px-10 rounded-lg bg-white flex flex-row gap-20 mt-10">
-        <div className="flex flex-col items-center">
+      <div className="name p-5 px-10 rounded-lg bg-white flex flex-row gap-20 mt-10">
+        <div className="name flex flex-col items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -34,7 +49,7 @@ const HomeIntro = () => {
             NCC Level 5 <br></br> Diploma in Computing
           </p>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="name flex flex-col items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -55,7 +70,7 @@ const HomeIntro = () => {
             over five main projects with <br></br> small projects
           </p>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="name flex flex-col items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
