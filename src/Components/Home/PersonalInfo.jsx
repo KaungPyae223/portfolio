@@ -27,10 +27,10 @@ const PersonalInfo = () => {
   }, []);
   const navigate = useNavigate();
   return (
-    <div className="mx-20 grid grid-cols-2 overflow-hidden my-10 profileContainer">
+    <div className="lg:mx-20 mx-5 grid md:grid-cols-2 grid-cols-1 overflow-hidden my-10 profileContainer gap-10 lg:gap-0">
       <div className="flex justify-center left">
         <img
-          className="w-1/2"
+          className="lg:w-3/4 xl:w-1/2 w-full object-cover"
           src="https://images.unsplash.com/photo-1517865288-978fcb780652?q=80&w=1586&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         />
       </div>

@@ -9,10 +9,10 @@ const Nav = () => {
   },[])
 
   return (
-    <div className="py-5 flex justify-center w-full ">
+    <div className="py-10 md:py-5 flex justify-center w-full ">
       <div className="bg-white navShadow p-3 rounded-full flex flex-row justify-center items-center gap-10">
-        <p className="font-medium px-5 text-lg">Kaung Pyae's portfolio</p>
-        <div className="border-e border-e-gray-400 h-full"></div>
+        <p className="font-medium px-5 text-lg hidden md:block">Kaung Pyae's portfolio</p>
+        <div className="border-e border-e-gray-400 h-full hidden md:block"></div>
 
         <div className="flex flex-row justify-center items-center gap-5">
           <NavLink

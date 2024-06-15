@@ -24,7 +24,7 @@ const MySkill = () => {
   return (
     <div className="my-20 homeSkill p-10 rounded-xl mx-auto w-fit bg-white">
       <p className="text-2xl font-semibold text-center">My Skills</p>
-      <div className="mt-10 flex flex-row gap-14">
+      <div className="mt-10 flex md:flex-row flex-col gap-14 items-center">
         <img src={JSicon} className="size-12" />
         <img src={PHP} className="size-12" />
         <img src={ReactIcon} className="size-12" />

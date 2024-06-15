@@ -20,9 +20,9 @@ const AboutIntro = () => {
     }, 0); 
   }, []);
   return (
-    <div className="m-20  grid grid-cols-2 gap-10 overflow-hidden">
+    <div className="m-20 lg:mx-20 mx-5 grid md:grid-cols-2 grid-cols-1 gap-10 overflow-hidden">
       <div className="left">
-        <p className="text-5xl mb-10">
+        <p className="text-5xl mb-10 leading-[5rem]">
           <span className="p-3 px-6 font-medium bg-yellow-300">
             Introduction
           </span>{" "}
@@ -50,7 +50,7 @@ const AboutIntro = () => {
       </div>
       <div className="flex justify-center right">
         <img
-          className="w-1/2 h-fit"
+          className="xl:w-1/2 w-full object-cover"
           src="https://images.unsplash.com/photo-1517865288-978fcb780652?q=80&w=1586&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         />
       </div>

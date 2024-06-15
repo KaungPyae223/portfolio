@@ -3,6 +3,7 @@ import FuturePlan from "./FuturePlan";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);
+import futureImage from "../../Photos/Future.png"
 
 const Future = () => {
   useEffect(() => {
@@ -36,15 +37,15 @@ const Future = () => {
       );
   }, []);
   return (
-    <div className="m-20 pt-3 grid grid-cols-2 gap-10 futureContainer">
+    <div className="overflow-hidden m-20 lg:mx-20 mx-5 grid md:grid-cols-2 grid-cols-1 gap-10  futureContainer">
       <div className="flex justify-center futureLeft">
         <img
-          className="w-2/3 h-fit"
-          src="https://images.unsplash.com/photo-1584259097593-a34c6bc53860?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="xl:w-2/3 w-full object-cover"
+          src={futureImage}
         />
       </div>
-      <div>
-        <p className="text-5xl mb-10 futureRight">
+      <div className="row-start-1 md:col-start-2">
+        <p className="text-5xl mb-10 futureRight leading-[5rem]">
           My <span className="p-3 px-6 font-medium bg-yellow-300">Future</span>{" "}
           Plans
         </p>

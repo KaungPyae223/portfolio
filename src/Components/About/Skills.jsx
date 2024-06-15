@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);
+import skillImage from "../../Photos/Skills.png"
 
 const skills = () => {
   useEffect(() => {
@@ -37,9 +38,9 @@ const skills = () => {
   }, []);
 
   return (
-    <div className="m-20 grid grid-cols-2 gap-10 pt-3 skillsContainer overflow-hidden">
+    <div className="overflow-hidden m-20 lg:mx-20 mx-5 grid md:grid-cols-2 grid-cols-1 gap-10 pt-3 skillsContainer">
       <div>
-        <p className="text-5xl mb-10 skillLeft">
+        <p className="text-5xl mb-10 skillLeft leading-[5rem]">
           My <span className="p-3 px-6 font-medium bg-yellow-300">Skills</span>{" "}
           Description
         </p>
@@ -117,8 +118,8 @@ const skills = () => {
       </div>
       <div className="flex justify-center skillRight">
         <img
-          className="w-2/3 h-fit"
-          src="https://images.unsplash.com/photo-1579403124614-197f69d8187b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="xl:w-2/3 w-full object-cover"
+          src={skillImage}
         />
       </div>
     </div>

@@ -46,12 +46,12 @@ const MyProjects = () => {
     
   }, []);
   return (
-    <div className="m-20">
+    <div className="md:m-20 m-5 my-10">
       <p className="text-3xl frontendTitle">
         My <span className="p-3 px-4 font-medium bg-yellow-300">Frontend</span>{" "}
         Projects
       </p>
-      <div className="mt-10 gap-6 grid grid-cols-3 frontendContainer">
+      <div className="mt-10 gap-6 grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 frontendContainer">
         <ProjectCard
           photo={AlexandarArt}
           title={"Alexandar Art website"}

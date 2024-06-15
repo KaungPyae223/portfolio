@@ -53,11 +53,11 @@ const MyProject = () => {
   }, []);
 
   return (
-    <div className="m-20">
+    <div className="lg:m-20 m-5 my-10">
       <p className="text-2xl font-semibold text-center homeProjectTitle">
         My Best Projects
       </p>
-      <div className="mt-10 gap-6 grid grid-cols-3">
+      <div className="mt-10 gap-6 grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1">
         <ProjectCard
           photo={AlexandarArt}
           title={"Alexandar Art website"}

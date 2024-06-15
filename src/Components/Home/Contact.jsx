@@ -11,7 +11,7 @@ const Contact = () => {
     const homeContact = gsap.timeline({
       scrollTrigger: {
         trigger: ".contactContainer",
-        start: "center 75%",
+        start: "top 75%",
       },
     });
 
@@ -39,10 +39,10 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="contactContainer grid grid-cols-2 m-20">
+    <div className="contactContainer grid md:grid-cols-2 grid-cols-1 lg:m-20 m-5 gap-10 lg:gap-5 md:gap-0">
       <div className="contactLeft">
         <p className="text-5xl leading-[5rem]">
-          Get in touch <span className="block"></span>
+          Get in touch <span className="md:block"></span>
           with me{" "}
           <span className="p-3 px-6 font-medium bg-yellow-300">Anytime</span>
         </p>

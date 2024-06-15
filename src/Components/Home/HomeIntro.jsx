@@ -17,18 +17,18 @@ const HomeIntro = () => {
   },[])
 
   return (
-    <div className="w-full flex flex-col items-center py-16">
+    <div className="flex flex-col items-center py-16 mx-5">
       <p className="name text-5xl p-5 rounded-xl bg-yellow-300 font-semibold">
         Hey, I'm Kaung Pyae Aung
       </p>
-      <p className="name text-5xl font-semibold my-12">a junior web developer</p>
-      <p className="name w-1/2 mt-3 text-lg">
+      <p className="name text-5xl font-semibold my-12 hidden md:block">a junior web developer</p>
+      <p className="name md:w-1/2 md:mt-3 mt-8 text-lg">
         I recently finished the NCC level 5 diploma in computing and have
         knowledge with HTML, CSS, JavaScript, and React. I have completed
         several projects, including building personal websites, shopping
         websites and others.
       </p>
-      <div className="name p-5 px-10 rounded-lg bg-white flex flex-row gap-20 mt-10">
+      <div className="name p-5 px-10 rounded-lg bg-white flex  flex-wrap justify-center md:flex-row gap-20 mt-10">
         <div className="name flex flex-col items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

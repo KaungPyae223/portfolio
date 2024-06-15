@@ -3,6 +3,7 @@ import EducatonTimeLine from "./EducatonTimeLine";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger);
+import eductaionImage from "../../Photos/Education.png"
 
 const Education = () => {
   useEffect(() => {
@@ -26,12 +27,12 @@ const Education = () => {
     }, 0) 
   }, []);
   return (
-    <div className="overflow-hidden m-20 pt-3 grid grid-cols-2 gap-10 educationContainer">
+    <div className="overflow-hidden m-20 lg:mx-20 mx-5 grid md:grid-cols-2 grid-cols-1 gap-10  pt-3 educationContainer">
       <div className="flex justify-center educationleft">
-        <img className="w-2/3 h-fit" src="https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+        <img className="xl:w-2/3 w-full object-cover" src={eductaionImage}/>
       </div>
-      <div>
-        <p className="text-5xl mb-10 educationUp">
+      <div className="row-start-1 md:col-start-2">
+        <p className="text-5xl mb-10 educationUp leading-[5rem]">
           My{" "}
           <span className="p-3 px-6 font-medium bg-yellow-300">Education</span>{" "}
           Journey
